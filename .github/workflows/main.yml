@@ -93,7 +93,9 @@ jobs:
 
      # 📦 JAR 파일 이름 추출 (실행 가능한 fat jar만 선택)
      - name: Get bootJar path
-       run: echo "JAR_FILE=$(*SNAPSHOT.jar)" >> $GITHUB_ENV
+       run: |
+        JAR_FILE=$(find . -name '*SNAPSHOT.jar' | head -n 1)
+        echo "JAR_FILE=$JAR_FILE" >> $GITHUB_ENV
  
      # 🔑 Docker Hub 로그인
      - name: Log in to Docker Hub
