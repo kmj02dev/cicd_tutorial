@@ -93,8 +93,7 @@ jobs:
 
      # 📦 JAR 파일 이름 추출 (실행 가능한 fat jar만 선택)
      - name: Get bootJar path
-       id: get-jar
-       run: ls
+       run: echo "JAR_FILE=$(*SNAPSHOT.jar)" >> $GITHUB_ENV
  
      # 🔑 Docker Hub 로그인
      - name: Log in to Docker Hub
@@ -106,6 +105,6 @@ jobs:
      # 🐳 Docker 이미지 빌드 + 푸시
      - name: Build and push Docker image
        run: |
-         docker build --build-arg JAR_FILE=${{env.JAR_FILE}} -t ${{ secrets.DOCKERHUB_USERNAME }}/myapp:latest .
+         docker build --build-arg JAR_FILE=$JAR_FILE -t ${{ secrets.DOCKERHUB_USERNAME }}/myapp:latest .
          docker push ${{ secrets.DOCKERHUB_USERNAME }}/myapp:latest
 
