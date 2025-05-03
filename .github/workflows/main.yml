@@ -68,7 +68,7 @@ jobs:
         script: |
           echo "🛑 Stopping existing container if running..."
           CONTAINER_ID=$(sudo docker ps -q --filter "name=${{ env.CONTAINER_NAME }}")
-          if [ ! -z "$CONTAINER_ID" ]; then
+          if [ ! -a "$CONTAINER_ID" ]; then
             sudo docker stop $CONTAINER_ID
             sudo docker rm $CONTAINER_ID
           fi
