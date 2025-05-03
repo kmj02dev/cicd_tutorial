@@ -6,4 +6,4 @@ ARG JAR_FILE
 COPY ${JAR_FILE} app.jar
 
 # 3. 실행
-ENTRYPOINT ["java","-jar","/app.jar"]
+ENTRYPOINT ["java","-jar","app.jar"]
