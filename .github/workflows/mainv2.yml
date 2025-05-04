@@ -56,7 +56,7 @@ jobs:
         username: ${{ env.EC2_SSH_USER }}
         key: ${{ env.PRIVATE_KEY }}
         script: |
-          cd /path/to/your/project
+          #cd /path/to/your/project
           docker-compose pull
           docker-compose down
           docker-compose up -d
