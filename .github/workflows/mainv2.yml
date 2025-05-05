@@ -33,7 +33,7 @@ jobs:
         distribution: 'temurin'
 
     - name: Grant execute permission for gradlew
-      run: chmod +x ${{ env.SERVICE_NAME }}/gradlew
+      run: chmod +x gradlew
 
     - name: Build Spring Boot Application
       working-directory: ${{ env.SERVICE_NAME }}
