@@ -7,7 +7,7 @@ on:
     branches: [ "main", "user-service/main" ]
 
 env:
-  SERVICE_NAME: user-service   # 예: order-service
+  SERVICE_NAME: ''   # 예: order-service
   DOCKER_IMAGE: ${{ secrets.DOCKERHUB_USERNAME }}/${{ vars.DOCKER_IMAGE_NAME }}:latest
   EC2_HOST: ${{ secrets.EC2_HOST }}
   EC2_SSH_USER: ec2-user
