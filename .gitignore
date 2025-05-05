@@ -38,3 +38,5 @@ out/
 
 ### Custom ###
 old.yml
+.env
+main.yml
