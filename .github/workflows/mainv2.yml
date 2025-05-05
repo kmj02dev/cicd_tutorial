@@ -12,11 +12,12 @@ env:
   TIMEZONE: Asia/Seoul
   DOCKER_USERNAME: ${{ secrets.DOCKERHUB_USERNAME }}
   DOCKER_TOKEN: ${{ secrets.DOCKERHUB_TOKEN }}
+  SERVICE_NAME: AService
 
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
-    environment: AService
+    environment: ${{ env.SERVICE_NAME }}
 
     steps:
     - name: Checkout
